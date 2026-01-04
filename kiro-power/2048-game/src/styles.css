@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #faf8ef;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #776e65;
+}
+
+.score-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.score-box {
+  background: #bbada0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-label {
+  font-size: 0.8rem;
+  color: #eee4da;
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.new-game-btn {
+  background: #8f7a66;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.new-game-btn:hover {
+  background: #9f8b77;
+}
+
+.game-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.grid {
+  background: #bbada0;
+  border-radius: 6px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 10px;
+}
+
+.cell {
+  background: rgba(238, 228, 218, 0.35);
+  border-radius: 6px;
+}
+
+.tile {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.tile-2 { background: #eee4da; color: #776e65; }
+.tile-4 { background: #ede0c8; color: #776e65; }
+.tile-8 { background: #f2b179; color: #f9f6f2; }
+.tile-16 { background: #f59563; color: #f9f6f2; }
+.tile-32 { background: #f67c5f; color: #f9f6f2; }
+.tile-64 { background: #f65e3b; color: #f9f6f2; }
+.tile-128 { background: #edcf72; color: #f9f6f2; font-size: 2rem; }
+.tile-256 { background: #edcc61; color: #f9f6f2; font-size: 2rem; }
+.tile-512 { background: #edc850; color: #f9f6f2; font-size: 2rem; }
+.tile-1024 { background: #edc53f; color: #f9f6f2; font-size: 1.8rem; }
+.tile-2048 { background: #edc22e; color: #f9f6f2; font-size: 1.8rem; }
+.tile-super { background: #3c3a32; color: #f9f6f2; font-size: 1.5rem; }
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes merge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.tile-new {
+  animation: pop 0.2s ease-in-out;
+}
+
+.tile-merged {
+  animation: merge 0.2s ease-in-out;
+}
+
+.message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(238, 228, 218, 0.73);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.message.hidden {
+  display: none;
+}
+
+.message p {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #776e65;
+}
+
+.message-btn {
+  background: #8f7a66;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.message-btn:hover {
+  background: #9f8b77;
+}
+
+.instructions {
+  margin-top: 20px;
+  color: #776e65;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(4, 70px);
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .tile {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .tile-128, .tile-256, .tile-512 { font-size: 1.5rem; }
+  .tile-1024, .tile-2048 { font-size: 1.2rem; }
+  .tile-super { font-size: 1rem; }
+  
+  .title { font-size: 2.5rem; }
+  .header { flex-direction: column; }
+}
