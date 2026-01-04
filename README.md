@@ -13,10 +13,17 @@ Launch a lab with Kiro:
 
 ```bash
 kiro lab01-capture-learning-into-kiro-power
+
+kiro lab02-subagents
+
+kiro lab03-contextual-hooks
+
+kiro lab04-global-steering
 ```
 
 ## Labs
 
-- [lab01 - Capture Learning into Kiro Power](lab01-capture-learning-into-kiro-power/)
-- [lab02 - Subagents](lab02-subagents/)
-- [lab03 - Contextual Hooks](lab03-contextual-hooks/)
+- [Lab 1 - Capture Learning into Kiro Power](lab01-capture-learning-into-kiro-power/)
+- [Lab 2 - Subagents](lab02-subagents/)
+- [Lab 3 - Contextual Hooks](lab03-contextual-hooks/)
+- [Lab 4 - Global Steering](lab04-global-steering/)
