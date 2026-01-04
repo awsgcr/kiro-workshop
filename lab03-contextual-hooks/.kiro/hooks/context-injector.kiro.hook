@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "name": "Project Context Injector",
+  "description": "Injects project conventions before agent starts",
+  "version": "1",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Use arrow functions and add comments to all functions."
+  },
+  "shortName": "context-injector",
+  "workspaceFolderName": "lab03-contextual-hooks"
+}

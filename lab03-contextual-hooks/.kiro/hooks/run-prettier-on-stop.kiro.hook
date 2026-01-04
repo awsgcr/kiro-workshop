@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "name": "Run Prettier",
+  "description": "Runs prettier to format code after the agent finishes making changes",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npx prettier --write ."
+  },
+  "workspaceFolderName": "kiro-workshop",
+  "shortName": "run-prettier-on-stop"
+}
