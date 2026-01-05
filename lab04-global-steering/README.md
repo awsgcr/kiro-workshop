@@ -64,11 +64,15 @@ mkdir -p ~/.kiro/steering
 
 For example, create `security`, `style`, `testing` steering file.
 
+```bash
+cp examples/* ~/.kiro/steering/
+```
+
+Check the `examples` directory for steering example. You can can create your own steering with the follow steps:
+
 ![global-steering](./assets/global-steering.png)
 
 ![example](./assets/example.png)
-
-Check the `examples` directory for steering example.
 
 ### Step 2: Test Your Global Steering
 
@@ -82,6 +86,8 @@ Create a utility function that validates email addresses
 ```
 
 Kiro should now follow your coding style and testing standards without you mentioning them.
+
+![kiro steering](./assets/lab4-kiro-steering.png)
 
 ---
 
