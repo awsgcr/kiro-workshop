@@ -1,6 +1,6 @@
 # Lab 2 - Kiro Subagents 
 
-![subagent demo](./assets/subagents.mp4)
+https://github.com/user-attachments/assets/dffbd37b-793a-4fa7-8edf-70918d075b2d
 
 Learn how to use Kiro's subagents to run multiple tasks in parallel and delegate work to specialized agents.
 
